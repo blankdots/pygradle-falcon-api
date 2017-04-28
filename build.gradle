@@ -1,0 +1,21 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath group: 'com.linkedin.pygradle', name: 'pygradle-plugin', version: '0.4.9'
+    }
+}
+
+apply plugin: 'com.linkedin.python-web'
+
+python {
+    testDir = file('tests')
+}
+
+dependencies {
+    python 'pypi:jsonschema:2.5.1'
+    python 'pypi:falcon:1.1.0'
+    python 'pypi:requests:2.13.0'
+    test 'pypi:httpretty:0.8.14'
+}

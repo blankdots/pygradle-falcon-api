@@ -1,0 +1,22 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "author": {
+            "type": "string"
+        },
+        "data": {
+            "type": "string"
+        },
+        "tags": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        }
+    },
+    "required": [
+        "data",
+        "author"
+    ],
+    "type": "object"
+}
