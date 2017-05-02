@@ -1,3 +1,7 @@
+activate
+pinned.txt
+
+### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -44,6 +48,7 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
+cover/
 
 # Translations
 *.mo
@@ -66,7 +71,7 @@ docs/_build/
 # PyBuilder
 target/
 
-# IPython Notebook
+# Jupyter Notebook
 .ipynb_checkpoints
 
 # pyenv
@@ -79,6 +84,7 @@ celerybeat-schedule
 .env
 
 # virtualenv
+.venv/
 venv/
 ENV/
 
@@ -88,5 +94,16 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# Database
-*.db
+# API logs
+
+logs/
+logs/api.log
+logs/server.log
+
+tmp[a-zA-Z0-9]*
+tmp[a-zA-Z0-9]*/
+
+java/gc-rdf2json-indexer.jar
+tests/resources/test.db
+data.db
+data/*
