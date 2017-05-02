@@ -6,12 +6,6 @@
         },
         "data": {
             "type": "string"
-        },
-        "tags": {
-            "items": {
-                "type": "string"
-            },
-            "type": "array"
         }
     },
     "required": [
