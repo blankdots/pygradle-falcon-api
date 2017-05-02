@@ -1,0 +1,4 @@
+jsonschema==2.5.1
+falcon==1.1.0
+requests==2.13.0
+gunicorn==19.6.0

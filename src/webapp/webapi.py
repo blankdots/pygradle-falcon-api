@@ -62,18 +62,11 @@ class IndexingResource(object):
         resp.status = falcon.HTTP_200
 
 
-def createAPI():
-    """Create the API endpoint."""
-    do_index = IndexClass()
-    get_index = IndexingResource()
+do_index = IndexClass()
+get_index = IndexingResource()
 
-    webapp = falcon.API()
-    webapp.add_route('/health', HealthCheck())
-    webapp.add_route('/%s/index' % (api_version), do_index)
-    webapp.add_route('/%s/index/{indexID}' % (api_version), get_index)
-    app_logger.info('App is running.')
-    return webapp
-
-
-if __name__ == '__main__':
-    createAPI()
+webapp = falcon.API()
+webapp.add_route('/health', HealthCheck())
+webapp.add_route('/%s/index' % (api_version), do_index)
+webapp.add_route('/%s/index/{indexID}' % (api_version), get_index)
+app_logger.info('App is running.')

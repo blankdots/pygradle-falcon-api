@@ -7,7 +7,9 @@ buildscript {
     }
 }
 
-apply plugin: 'com.linkedin.python-web'
+apply plugin: 'com.linkedin.python-web-app'
+
+version = "1.0"
 
 python {
     testDir = file('tests')
@@ -17,5 +19,27 @@ dependencies {
     python 'pypi:jsonschema:2.5.1'
     python 'pypi:falcon:1.1.0'
     python 'pypi:requests:2.13.0'
+    python 'pypi:gunicorn:19.6.0'
     test 'pypi:httpretty:0.8.14'
+}
+
+repositories {
+    // using a local repository
+    ivy{
+        name 'pypi-local'
+        url "/home/user/pivy/"
+        layout 'pattern' , {
+            artifact '[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]'
+            ivy '[organisation]/[module]/[revision]/[module]-[revision].ivy'
+        }
+    }
+    // using a web repository
+    ivy{
+        name 'pypi-remote'
+        url "http://attx-dev:5039/"
+        layout 'pattern' , {
+              artifact '[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]'
+              ivy '[organisation]/[module]/[revision]/[module]-[revision].ivy'
+        }
+    }
 }

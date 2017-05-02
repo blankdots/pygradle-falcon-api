@@ -6,7 +6,7 @@ def connect_DB(db_file=None):
     """Connect to DB by parsing configuration."""
     db_filename = ''
     if db_file is None:
-        db_filename = 'data/data.db'
+        db_filename = 'data.db'
     else:
         db_filename = db_file
     try:
