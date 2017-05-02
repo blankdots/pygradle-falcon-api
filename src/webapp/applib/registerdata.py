@@ -48,8 +48,8 @@ class IndexingData(object):
         """Check the indexing job status."""
         db_cursor = conn.cursor()
         # Insert a row of data
-        for row in db_cursor.execute('SELECT rowid, indexstatus FROM indexes WHERE rowid=?', (indexID, )):
-            result = {'id': row[0], 'status': row[1]}
+        for row in db_cursor.execute('SELECT rowid, indexstatus, data, author, timestamp FROM indexes WHERE rowid=?', (indexID, )):
+            result = {'id': row[0], 'status': row[1], 'author': row[3], 'data': row[2], 'timestamp': row[4]}
             app_logger.info('Check status in the database for indexing job ID: {0}'.format(indexID))
             break
         else:
