@@ -45,6 +45,5 @@ curl -X GET \
 curl -X GET \
   http://localhost:8000/0.1/index/1 \
   -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-}'
+  -H 'content-type: application/json'
 ```
