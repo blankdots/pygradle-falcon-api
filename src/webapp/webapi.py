@@ -6,6 +6,16 @@ from webapp.utils.logs import app_logger
 from webapp.schemas import load_schema
 from webapp.utils.validate import validate
 from webapp.applib.registerdata import IndexingData
+import consul
+
+
+c = consul.Consul(host='attx-sandbox', port=8500)
+# Register Service
+c.agent.service.register('restapi',
+                         service_id='restapi_try2',
+                         port=4300,
+                         tags=['test2', 'graph-component'])
+
 
 api_version = "0.1"
 

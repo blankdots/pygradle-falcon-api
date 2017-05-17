@@ -16,6 +16,7 @@ python {
 }
 
 dependencies {
+    python 'pypi:python-consul:0.7.0'
     python 'pypi:jsonschema:2.5.1'
     python 'pypi:falcon:1.1.0'
     python 'pypi:requests:2.13.0'
