@@ -7,9 +7,13 @@ from webapp.schemas import load_schema
 from webapp.utils.validate import validate
 from webapp.applib.registerdata import IndexingData
 import consul
+import os
 
 
-c = consul.Consul(host='attx-sandbox', port=8500)
+Check = consul.Check
+# http_addr = "http://127.0.0.1:4300/health"
+#  check=Check.http(http_addr, '10ms'),
+c = consul.Consul(host=os.environ.get('CONSULIP'), port=os.environ.get('CONSULPORT'))
 # Register Service
 c.agent.service.register('restapi',
                          service_id='restapi_try2',
