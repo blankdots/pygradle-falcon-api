@@ -4,6 +4,10 @@ Example of of building a Falcon REST API using PyGradle (using python-web-app pl
 * `index` - registers data sent via POST in a SQLite3 Database;
 * `health` - checks if the application is running.
 
+To Do:
+* write tests
+* generate documentation from source code
+
 ## Building and Running the application
 
 ### Requirements
@@ -26,7 +30,7 @@ Example of requests:
 
 ```
 curl -X POST \
-  http://localhost:8000/0.1/index/ \
+  http://localhost:4300/0.1/index/ \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '{
@@ -37,13 +41,13 @@ curl -X POST \
 
 ```
 curl -X GET \
-  http://localhost:8000/health \
+  http://localhost:4300/health \
   -H 'cache-control: no-cache'
 ```
 
 ```
 curl -X GET \
-  http://localhost:8000/0.1/index/1 \
+  http://localhost:4300/0.1/index/1 \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json'
 ```
