@@ -6,19 +6,19 @@ from webapp.utils.logs import app_logger
 from webapp.schemas import load_schema
 from webapp.utils.validate import validate
 from webapp.applib.registerdata import IndexingData
-import consul
-import os
+# import consul
+# import os
 
 
-Check = consul.Check
+# Check = consul.Check
 # http_addr = "http://127.0.0.1:4300/health"
 #  check=Check.http(http_addr, '10ms'),
-c = consul.Consul(host=os.environ.get('CONSULIP'), port=os.environ.get('CONSULPORT'))
-# Register Service
-c.agent.service.register('restapi',
-                         service_id='restapi_try2',
-                         port=4300,
-                         tags=['test2', 'graph-component'])
+# c = consul.Consul(host=os.environ.get('CONSULIP'), port=os.environ.get('CONSULPORT'))
+# # Register Service
+# c.agent.service.register('restapi',
+#                          service_id='restapi_try2',
+#                          port=4300,
+#                          tags=['test2', 'graph-component'])
 
 
 api_version = "0.1"
