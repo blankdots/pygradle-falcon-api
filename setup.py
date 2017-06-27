@@ -161,7 +161,7 @@ setup(
     description='Falcon PyGradle example',
     # entry_points='''
     #     [console_scripts]
-    #     gmapi=gm_api.gmapi:main
+    #     webapi=webapp.webapi:main
     # ''',
     author='ATTX Project',
     author_email='stefan.negru@helsinki.fi',
