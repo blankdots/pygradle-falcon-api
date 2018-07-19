@@ -12,7 +12,7 @@ To Do:
 
 ### Requirements
 1. Python 2.7
-2. Gradle 3.0+ https://gradle.org/
+2. Gradle 4.0+ https://gradle.org/
 3. Pypi Ivy repository either a local one (see https://github.com/linkedin/pygradle/blob/master/docs/pivy-importer.md for more information) or you can deploy your own version using https://github.com/blankdots/ivy-pypi-repo
 
 
